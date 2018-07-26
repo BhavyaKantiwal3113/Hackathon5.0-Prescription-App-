@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     <!-- <img class="header" src="assets/imgs/header.png"> -->
+      Find Alternative Drug
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="abc">
+    <div *ngIf="!status">
+        Enter Medicine Brand Name<br>
+        <input type="text" [(ngModel)]="mybrand"><br>
+        Enter Medicine Current City<br>
+        <input type="text" [(ngModel)]="city"><br>
+        <button style="margin-left:40px " ion-button (click)="checkMedicine()">go</button>
+</div>
+<ul *ngIf="status">
+    <li *ngFor= "let m of brands; let i= index">Medicine Name: {{m}}<br>Shope name: {{shops[i]}}<br>Address: {{saddress[i]}}<button (click)="openMapPage(i)">Go</button></li>
+</ul>
+</ion-content>
